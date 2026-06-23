@@ -1,8 +1,11 @@
 # 📚 Aplikasi E-Library Admin Panel (Tugas UAS Pemrograman Web 2)
 
 Aplikasi Web **E-Library Admin Panel** ini dibangun sebagai proyek Ujian Akhir Semester (UAS) pada mata kuliah Pemrograman Web 2. Sistem ini menerapkan arsitektur pemisahan modern antara **Backend (API Server)** dan **Frontend (Single Page Application)**.
+
 **Nama: Zaki Fauzan Akhbari**
+
 **Nim: 312410348**
+
 **Kelas: I241D**
 ---
 
