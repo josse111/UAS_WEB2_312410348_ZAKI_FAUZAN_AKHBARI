@@ -61,23 +61,23 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 Pernyataan di atas memerintahkan server CodeIgniter untuk menerima ketukan data dari luar demi keperluan integrasi lingkungan pengembangan (development environment).
 
 ## 🚀 Fitur Utama Sistem
-Sistem Autentikasi Instan: Menggunakan token statis lokal yang aman untuk mem-bypass autentikasi admin di sisi klien secara kilat.
+- **Sistem Autentikasi Instan:** Menggunakan token statis lokal yang aman untuk mem-bypass autentikasi admin di sisi klien secara kilat.
 
-***Manajemen Inventaris Buku (CRUD):**
+**Manajemen Inventaris Buku (CRUD):**
 
-Create: Menambahkan data koleksi buku baru langsung ke dalam tabel.
+- **Create:** Menambahkan data koleksi buku baru langsung ke dalam tabel.
 
-Read: Menampilkan data inventaris aktif lengkap dengan detail judul, penulis, penerbit, stok, dan label status.
+- **Read:** Menampilkan data inventaris aktif lengkap dengan detail judul, penulis, penerbit, stok, dan label status.
 
-Update: Mengubah detail informasi data buku secara instan melalui sinkronisasi form pengisian.
+- **Update:** Mengubah detail informasi data buku secara instan melalui sinkronisasi form pengisian.
 
-Delete: Menghapus data buku dengan fitur konfirmasi pengaman bawaan.
+- **Delete:** Menghapus data buku dengan fitur konfirmasi pengaman bawaan.
 
-Status Badge Dinamis: Visualisasi otomatis untuk status buku (Tersedia, Dipinjam, atau Hilang) menggunakan variasi komponen Tailwind CSS.
+- **Status Badge Dinamis:** Visualisasi otomatis untuk status buku (Tersedia, Dipinjam, atau Hilang) menggunakan variasi komponen Tailwind CSS.
 
 ## 👤 Akun Uji Coba Admin
 Gunakan kredensial berikut untuk menguji sistem pada halaman login panel:
 
-Username: admin
+- **Username:** admin
 
-Password: admin123
+- **Password:** admin123
