@@ -6,8 +6,6 @@ Aplikasi Web **E-Library Admin Panel** ini dibangun sebagai proyek Ujian Akhir S
 
 ## 📸 Dokumentasi & Screenshot Aplikasi
 
-*Silakan tempelkan screenshot aplikasi Anda pada bagian di bawah ini setelah di-upload ke GitHub.*
-
 ### 1. Halaman Login Admin
 ![Halaman Login Admin](TEMPEL_LINK_SCREENSHOT_LOGIN_DISINI)
 *Keterangan: Tampilan form login admin yang dirancang bersih dan responsif menggunakan Tailwind CSS.*
