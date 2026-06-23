@@ -37,3 +37,47 @@ UAS_Web2_E_Library/
 │
 └── README.md             # Dokumentasi proyek uas
 ```
+---
+
+## 🛠️ Pembahasan Arsitektur & Teknologi
+
+### 1. Konsep Decoupled Architecture (Pemisahan Backend & Frontend)
+Proyek ini mengadopsi arsitektur modern di mana **Backend** dan **Frontend** berdiri sebagai entitas terpisah:
+- **Backend API (CodeIgniter 4):** Berperan murni sebagai penyedia data (*Data Provider*). Menggunakan arsitektur MVC (Model-View-Controller), namun komponen *View* ditiadakan dan diganti dengan respons format **JSON** agar bisa dikonsumsi oleh perangkat/platform apa pun.
+- **Frontend SPA (Vue.js 3):** Berperan sebagai pengatur antarmuka pengguna (*User Interface*). Logika aplikasi dijalankan sepenuhnya di sisi client (browser), sehingga interaksi terasa sangat instan.
+
+### 2. Mekanisme Kerja Single Page Application (SPA)
+Tidak seperti web tradisional yang harus memuat ulang seluruh halaman (`hard reload`) setiap kali berpindah menu, aplikasi ini memanfaatkan **Vue.js 3 Reactive State**. Ketika admin berhasil login atau melakukan manajemen data (CRUD), Vue 3 secara cerdas hanya memperbarui bagian komponen HTML yang berubah saja (*DOM Manipulation*). Hal ini membuat penggunaan memori lebih efisien dan menghemat kuota internet karena tidak ada aset CSS/JS yang diunduh berulang kali.
+
+### 3. Penanganan Masalah Kebijakan CORS (Cross-Origin Resource Sharing)
+Karena Frontend berjalan pada protokol lokal browser/Live Server (`http://127.0.0.1:5500` atau `file:///`) sedangkan Backend API berjalan pada port terpisah (`http://localhost:8080`), browser secara otomatis akan memblokir request demi keamanan lintas asal (*Same-Origin Policy*). 
+
+Untuk mengatasi hal tersebut, proyek ini mengonfigurasi header pengaman khusus pada file backend rute:
+```php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+```
+Pernyataan di atas memerintahkan server CodeIgniter untuk menerima ketukan data dari luar demi keperluan integrasi lingkungan pengembangan (development environment).
+
+## 🚀 Fitur Utama Sistem
+Sistem Autentikasi Instan: Menggunakan token statis lokal yang aman untuk mem-bypass autentikasi admin di sisi klien secara kilat.
+
+Manajemen Inventaris Buku (CRUD):
+
+Create: Menambahkan data koleksi buku baru langsung ke dalam tabel.
+
+Read: Menampilkan data inventaris aktif lengkap dengan detail judul, penulis, penerbit, stok, dan label status.
+
+Update: Mengubah detail informasi data buku secara instan melalui sinkronisasi form pengisian.
+
+Delete: Menghapus data buku dengan fitur konfirmasi pengaman bawaan.
+
+Status Badge Dinamis: Visualisasi otomatis untuk status buku (Tersedia, Dipinjam, atau Hilang) menggunakan variasi komponen Tailwind CSS.
+
+## 👤 Akun Uji Coba Admin
+Gunakan kredensial berikut untuk menguji sistem pada halaman login panel:
+
+Username: admin
+
+Password: admin123
