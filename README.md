@@ -1,110 +1,80 @@
-# CodeIgniter 4 Development
+# 📚 Aplikasi E-Library Admin Panel (Tugas UAS Pemrograman Web 2)
 
-[![PHPUnit](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpunit.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpunit.yml)
-[![PHPStan](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpstan.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-phpstan.yml)
-[![Psalm](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-psalm.yml/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions/workflows/test-psalm.yml)
-[![Coverage Status](https://coveralls.io/repos/github/codeigniter4/CodeIgniter4/badge.svg?branch=develop)](https://coveralls.io/github/codeigniter4/CodeIgniter4?branch=develop)
-[![Downloads](https://poser.pugx.org/codeigniter4/framework/downloads)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/codeigniter4/CodeIgniter4)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub stars](https://img.shields.io/github/stars/codeigniter4/CodeIgniter4)](https://packagist.org/packages/codeigniter4/framework)
-[![GitHub license](https://img.shields.io/github/license/codeigniter4/CodeIgniter4)](https://github.com/codeigniter4/CodeIgniter4/blob/develop/LICENSE)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/codeigniter4/CodeIgniter4/pulls)
-<br>
+Proyek ini dibangun untuk memenuhi tugas Ujian Akhir Semester (UAS) pada mata kuliah Pemrograman Web 2 dengan studi kasus Sistem Manajemen Inventaris E-Library. Sistem ini menerapkan arsitektur *Decoupled* yang memisahkan antara **Backend (API Server)** dan **Frontend (Single Page Application)**.
 
-## What is CodeIgniter?
+**Nama : ZAKI FAUZAN AKHBARI
+NIM: 312410348
+KELAS I241D**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds the source code for CodeIgniter 4 only.
-Version 4 is a complete rewrite to bring the quality and the code into a more modern version,
-while still keeping as many of the things intact that has made people love the framework over the years.
+## 📸 Dokumentasi & Screenshot Aplikasi
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-### Documentation
+### 1. Skema Relasi Tabel Database (phpMyAdmin Designer)
+<img width="1913" height="995" alt="Screenshot 2026-06-23 212846" src="https://github.com/user-attachments/assets/3bb7ce15-b10b-4c99-a2c2-2d0d4a10080e" />
 
-The [User Guide](https://codeigniter.com/user_guide/) is the primary documentation for CodeIgniter 4.
+### 2. Uji Coba Request API Gagal (Error 401 Unauthorized via Postman)
 
-You will also find the [current **in-progress** User Guide](https://codeigniter4.github.io/CodeIgniter4/).
-As with the rest of the framework, it is a work in progress, and will see changes over time to structure, explanations, etc.
+<img width="1466" height="477" alt="Screenshot 2026-06-23 195454" src="https://github.com/user-attachments/assets/2a323991-f5ae-4634-a595-ebaf765a38ab" />
 
-You might also be interested in the [API documentation](https://codeigniter4.github.io/api/) for the framework components.
+### 3. Antarmuka Halaman Login Admin
+<img width="1802" height="892" alt="Screenshot 2026-06-23 201511" src="https://github.com/user-attachments/assets/f094c802-1f46-4d6f-8642-a035f6656920" />
 
-## Important Change with index.php
+### 4. Halaman Dashboard Utama & Tabel Manajemen Data CRUD
+<img width="1896" height="992" alt="Screenshot 2026-06-23 210157" src="https://github.com/user-attachments/assets/e41aefe3-6529-4f85-9a6d-4c9a10a8589d" />
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+---
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## 📂 Pengorganisasian Folder Proyek
 
-## Repository Management
+Sesuai instruksi ketentuan pengumpulan, repositori ini dibagi menjadi dua folder utama:
 
-CodeIgniter is developed completely on a volunteer basis. As such, please give up to 7 days
-for your issues to be reviewed. If you haven't heard from one of the team in that time period,
-feel free to leave a comment on the issue so that it gets brought back to our attention.
+UAS_Web2_E_Library/
+- backend-api/ (Berisi seluruh ekosistem framework CodeIgniter 4 untuk server RESTful API)
+- frontend-spa/ (Berisi file index.html, implementasi framework Vue.js 3, dan aset Tailwind CSS)
+- README.md (Dokumentasi lengkap proyek UAS)
 
-> [!IMPORTANT]
-> We use GitHub issues to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-> We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-> FEATURE REQUESTS.
+---
 
-If you raise an issue here that pertains to support or a feature request, it will
-be closed! If you are not sure if you have found a bug, raise a thread on the forum first -
-someone else may have encountered the same thing.
+## 🛠️ Pembahasan Arsitektur & Teori Teknologi
 
-Before raising a new GitHub issue, please check that your bug hasn't already
-been reported or fixed.
+### 1. Konsep Decoupled Architecture (Pemisahan Backend & Frontend)
+Proyek ini mengadopsi arsitektur modern di mana Backend dan Frontend berdiri sebagai entitas terpisah:
+- Backend API (CodeIgniter 4): Berperan murni sebagai penyedia data (Data Provider). Menggunakan arsitektur MVC (Model-View-Controller), namun komponen View ditiadakan dan diganti dengan respons format JSON agar bisa dikonsumsi oleh Frontend secara independen.
+- Frontend SPA (Vue.js 3): Berperan sebagai pengatur antarmuka pengguna (User Interface). Logika aplikasi dijalankan sepenuhnya di sisi client (browser), sehingga interaksi terasa sangat instan.
 
-We use pull requests (PRs) for CONTRIBUTIONS to the repository.
-We are looking for contributions that address one of the reported bugs or
-approved work packages.
+### 2. Mekanisme Kerja Single Page Application (SPA)
+Tidak seperti web tradisional yang harus memuat ulang seluruh halaman (hard reload) setiap kali berpindah menu, aplikasi ini memanfaatkan Vue.js 3 Reactive State. Ketika admin berhasil login atau melakukan manajemen data (CRUD), Vue 3 secara cerdas hanya memperbarui bagian komponen HTML yang berubah saja (DOM Manipulation). Hal ini membuat penggunaan memori lebih efisien dan menghemat kuota internet karena tidak ada aset CSS/JS yang diunduh berulang kali.
 
-Do not use a PR as a form of feature request.
-Unsolicited contributions will only be considered if they fit nicely
-into the framework roadmap.
-Remember that some components that were part of CodeIgniter 3 are being moved
-to optional packages, with their own repository.
+### 3. Proteksi Endpoint API (AuthFilter & Token Security)
+Untuk mengamankan database dari serangan luar, endpoint kritis seperti penambahan, pembaruan, dan penghapusan buku dilindungi oleh AuthFilter di sisi CodeIgniter 4. Jika request dikirim tanpa membawa Token Validasi yang sah di bagian Header Authorization, server backend akan otomatis menolak akses dan membalas dengan status HTTP 401 Unauthorized demi menjaga integritas data perpustakaan.
 
-## Contributing
+---
 
-We **are** accepting contributions from the community! It doesn't matter whether you can code, write documentation, or help find bugs,
-all contributions are welcome.
+## ⚙️ Petunjuk Instalasi & Menjalankan Proyek Secara Lokal
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/README.md).
+Berikut langkah-langkah untuk menjalankan aplikasi ini di komputer lokal Anda:
 
-CodeIgniter has had thousands on contributions from people since its creation. This project would not be what it is without them.
+### Persiapan Backend (API Server):
+1. Pastikan aplikasi XAMPP sudah terinstal dan hidupkan module Apache serta MySQL.
+2. Import file database MySQL proyek ini (`uas_elibrary.sql`) melalui phpMyAdmin.
+3. Buka terminal atau command prompt, lalu masuk ke direktori backend: `cd backend-api`.
+4. Jalankan perintah server lokal CodeIgniter 4: `php spark serve`.
+5. Server backend akan aktif berjalan di alamat `http://localhost:8080`.
 
-<a href="https://github.com/codeigniter4/CodeIgniter4/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=codeigniter4/CodeIgniter4" />
-</a>
+### Persiapan Frontend (SPA Antarmuka):
+1. Masuk ke direktori frontend: `cd frontend-spa`.
+2. Buka file `index.html` menggunakan browser Google Chrome secara langsung, atau jalankan menggunakan ekstensi "Live Server" di VS Code untuk mendapatkan alamat `http://127.0.0.1:5500`.
+3. Gunakan akun demonstrasi berikut untuk masuk ke dashboard:
+   - **Username:** admin
+   - **Password:** admin123
 
-Made with [contrib.rocks](https://contrib.rocks).
+---
 
-## Server Requirements
+## 🔗 Tautan Tontonan Demo & Presentasi
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+Berikut adalah link video demonstrasi fungsionalitas program dan presentasi arsitektur proyek:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using a PHP version below 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-## Running CodeIgniter Tests
-
-Information on running the CodeIgniter test suite can be found in the [README.md](tests/README.md) file in the tests directory.
+- **Link Video Presentasi Proyek (YouTube/Drive):** https://youtu.be/S5g7sWVvmBk 
