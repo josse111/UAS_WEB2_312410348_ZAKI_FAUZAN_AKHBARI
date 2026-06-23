@@ -32,11 +32,11 @@ Proyek ini dibangun untuk memenuhi tugas Ujian Akhir Semester (UAS) pada mata ku
 
 Sesuai instruksi ketentuan pengumpulan, repositori ini dibagi menjadi dua folder utama:
 
-UAS_Web2_E_Library/
+```UAS_Web2_E_Library/
 - backend-api/ (Berisi seluruh ekosistem framework CodeIgniter 4 untuk server RESTful API)
 - frontend-spa/ (Berisi file index.html, implementasi framework Vue.js 3, dan aset Tailwind CSS)
 - README.md (Dokumentasi lengkap proyek UAS)
-
+```
 ---
 
 ## 🛠️ Pembahasan Arsitektur & Teori Teknologi
