@@ -63,7 +63,7 @@ Pernyataan di atas memerintahkan server CodeIgniter untuk menerima ketukan data 
 ## 🚀 Fitur Utama Sistem
 Sistem Autentikasi Instan: Menggunakan token statis lokal yang aman untuk mem-bypass autentikasi admin di sisi klien secara kilat.
 
-Manajemen Inventaris Buku (CRUD):
+***Manajemen Inventaris Buku (CRUD):**
 
 Create: Menambahkan data koleksi buku baru langsung ke dalam tabel.
 
