@@ -73,8 +73,8 @@ Berikut langkah-langkah untuk menjalankan aplikasi ini di komputer lokal Anda:
 
 ---
 
-## 🔗 Tautan Tontonan Demo & Presentasi
+## 🔗 Tautan Tontonan Presentasi
 
 Berikut adalah link video demonstrasi fungsionalitas program dan presentasi arsitektur proyek:
 
-- **Link Video Presentasi Proyek (YouTube/Drive):** https://youtu.be/S5g7sWVvmBk 
+- **Link Video Presentasi Proyek (YouTube/Drive):** https://youtu.be/OFlPsIO3-c0 
